@@ -3,8 +3,7 @@ using namespace std;
 #define ll long long
 
 int main() {
-    ios::sync_with_stdio(false); 
-    cin.tie(nullptr);
+    ios::sync_with_stdio(false); cin.tie(nullptr);
 
     int n; cin>>n;
     set<int> seen;
