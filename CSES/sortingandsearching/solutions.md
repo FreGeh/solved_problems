@@ -2,8 +2,8 @@
 
 *`ll` equals `long long`*
 
-## Distinct Numbers
-- **Intuition**: 
+## [Distinct Numbers](https://cses.fi/problemset/task/1621)
+- **Intuition**: A set only stores unique numbers
 ```cpp
 int main() {
     ios::sync_with_stdio(false); cin.tie(nullptr);
@@ -19,21 +19,21 @@ int main() {
 }
 ```
 
-## Apartments
-- **Intuition**: 
+## [Apartments](https://cses.fi/problemset/task/1084)
+- **Intuition**: Differentiate between the three cases (applicant accepts, apartment size too small, apartment size too big)
 ```cpp
 int main() {
     ios::sync_with_stdio(false); cin.tie(nullptr);
 
-    ll n,m,k; cin>>n>>m>>k;
-    vector<ll> applicants(n), apartments(m);
-    for (ll i=0;i<n;i++) cin >> applicants[i];
-    for (ll i=0;i<m;i++) cin >> apartments[i];
-
+    int n,m,k; cin>>n>>m>>k;
+    vector<int> applicants(n), apartments(m);
+    for (auto &app : applicants) cin >> app;
+    for (auto &apart : apartments) cin >> apart;
     sort(applicants.begin(), applicants.end()); sort(apartments.begin(), apartments.end());
-    ll count = 0;
-    for (ll i=0,j=0;i<n && j<m;) {
-        if (abs(applicants[i]-apartments[j])<=k) j++; i++; count++;
+
+    int count = 0;
+    for (int i=0,j=0;i<n && j<m;) {
+        if (abs(applicants[i]-apartments[j])<=k) j++, i++, count++;
         else if (applicants[i]>apartments[j]+k) j++;
         else i++;
     }
@@ -42,52 +42,103 @@ int main() {
 }
 ```
 
-## Ferris Wheel
-- **Intuition**: 
+## [Ferris Wheel](https://cses.fi/problemset/task/1090)
+- **Intuition**: Try to pair the heaviest kids with the lightest ones
 ```cpp
+int main() {
+    ios::sync_with_stdio(false); cin.tie(nullptr);
 
+    int n;
+    int x;
+    cin>>n>>x;
+    vector<int> weight(n);
+    for (auto &w : weight) cin >> w;
+    sort(weight.begin(), weight.end());
+
+    int count=0;
+    int i = 0, j=weight.size()-1;
+    while (i <= j) {
+        if (weight[i]+weight[j] <= x) i++, j--, count++;
+        else j--, count++;
+    }
+    cout << count;
+    return 0;
+}
 ```
 
-## Concert Tickets
-- **Intuition**: 
+## [Concert Tickets](https://cses.fi/problemset/task/1091)
+- **Intuition**: Test if there's a ticket <= maximum price they are willing to pay
 ```cpp
+int main() {
+    ios::sync_with_stdio(false); cin.tie(nullptr);
 
+    int n,m; cin>>n>>m;
+    multiset<int> T;
+    for (int i=0;i<n;i++) {
+        int x; cin>>x;
+        T.insert(x);
+    }
+    for (int j=0;j<m;j++) {
+        int offer; cin>>offer;
+        auto it = T.upper_bound(offer);
+        if (it == T.begin()) cout << -1 << "\n";
+        else it--, cout << *it << "\n", T.erase(it);
+    }
+    return 0;
+}
 ```
 
-## Restaurant Customers
-- **Intuition**: 
+## [Restaurant Customers](https://cses.fi/problemset/task/1619)
+- **Intuition**: Keep a count of current customers in the restaurant and update depending on if someone leaves or enters
 ```cpp
+int main() {
+    ios::sync_with_stdio(false); cin.tie(nullptr);
 
+    int n; cin>>n;
+    vector<pair<int,bool>> I;
+    for (int i=0;i<n;i++) {
+        int a,b; cin>>a>>b;
+        I.push_back({a, true});
+        I.push_back({b, false});
+    }
+    sort(I.begin(), I.end());
+
+    int cur=0;
+    int best=0;
+    for (auto i : I) {
+        if (i.second) cur++;
+        else cur--;
+        best=max(best,cur);
+    }
+    cout << best;
+
+    return 0;
+}
 ```
 
 ## [Movie Festival](https://cses.fi/problemset/task/1629)
 - **Intuition**: Sort all movies after their endtime
+```cpp
+int main() {
+    ios::sync_with_stdio(false); cin.tie(nullptr);
 
-<details>
-  <summary>Code</summary>
-  
-  ```cpp
-    int main() {
-        ios::sync_with_stdio(false); cin.tie(nullptr);
-
-        int n; cin>>n;
-        vector<pair<int,int>> movies(n);
-        for (int i=0; i<n; i++) {
-            int a,b; cin>>a>>b;
-            movies[i]={b,a};
-        }
-        sort(movies.begin(), movies.end());
-        int cur=0;
-        int sum=0;
-        for (auto mov : movies) {
-            if (mov.second >= cur) {
-                cur=mov.first;
-                sum++;
-            }
-        } 
-        cout<<sum;
-        return 0;
+    int n; cin>>n;
+    vector<pair<int,int>> movies(n);
+    for (int i=0; i<n; i++) {
+        int a,b; cin>>a>>b;
+        movies[i]={b,a};
     }
-    ```
-  
-</details>
+    sort(movies.begin(), movies.end());
+    int cur=0;
+    int sum=0;
+    for (auto mov : movies) {
+        if (mov.second >= cur) {
+            cur=mov.first;
+            sum++;
+        }
+    }
+    cout<<sum;
+    return 0;
+}
+```
+

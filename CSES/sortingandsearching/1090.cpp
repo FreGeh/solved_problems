@@ -3,31 +3,22 @@ using namespace std;
 #define ll long long
 
 int main() {
-    ios::sync_with_stdio(false); 
-    cin.tie(nullptr);
+    ios::sync_with_stdio(false); cin.tie(nullptr);
 
-    ll n;
-    ll x;
+    int n;
+    int x;
     cin>>n>>x;
-    vector<ll> weight(n);
-    for (auto &w : weight) {
-        cin >> w;
-    }
+    vector<int> weight(n);
+    for (auto &w : weight) cin >> w;
     sort(weight.begin(), weight.end());
-    ll count=0;
-    ll i = 0, j=weight.size()-1;
+
+    int count=0;
+    int i = 0, j=weight.size()-1;
     while (i <= j) {
-        if (weight[i]+weight[j] <= x) {
-            i++;
-            j--;
-            count++;
-        } else {
-            j--;
-            count++;
-        }
+        if (weight[i]+weight[j] <= x) i++, j--, count++;
+        else j--, count++;
     }
     cout << count;
-
 
     return 0;
 }
