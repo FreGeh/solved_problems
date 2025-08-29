@@ -1,4 +1,4 @@
-### Progress (last 12 months)
+### Progress (last 12 months) across all coding platforms
 
 <a href="zadditional/docs/progress.html">
   <img src="zadditional/progress_dashboard.svg" alt="Competitive programming progress heatmap and stats">
