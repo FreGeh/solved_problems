@@ -77,38 +77,40 @@
         t.setAttribute('x', x);
         t.setAttribute('y', 12);
         t.setAttribute('fill', '#555');
-        t.textContent = fm.toLocaleString(undefined, {month:'short'});
+        t.setAttribute('font-size', 10);
+        t.textContent = fm.toLocaleString(undefined, {{month:'short'}});
         g.appendChild(t);
-      }
-    }
-  })();
+      }}
+    }}
+  }})();
 
   // Weekday labels
-  const weekdays = {0:'Mon',2:'Wed',4:'Fri'};
-  for (const k of Object.keys(weekdays)) {
+  const weekdays = {{0:'Mon',2:'Wed',4:'Fri'}};
+  for (const k of Object.keys(weekdays)) {{
     const r = +k;
     const t = document.createElementNS(svg.namespaceURI, 'text');
     t.setAttribute('x', 0);
     t.setAttribute('y', padT + r*(cell+gap) + cell - 2);
     t.setAttribute('fill', '#777');
+    t.setAttribute('font-size', 10);
     t.textContent = weekdays[r];
     g.appendChild(t);
-  }
+  }}
 
   // Cells
   const startD = new Date(cfg.grid_start), today = new Date(DATA.config.today);
   const msPerDay = 86400000;
   const tooltip = document.getElementById('tooltip');
 
-  function showTip(x,y,text) {
+  function showTip(x,y,text) {{
     tooltip.textContent = text;
     tooltip.style.left = (x + 14) + 'px';
     tooltip.style.top = (y + 14) + 'px';
     tooltip.style.opacity = 1;
-  }
-  function hideTip() { tooltip.style.opacity = 0; }
+  }}
+  function hideTip() {{ tooltip.style.opacity = 0; }}
 
-  for (let d = new Date(startD), i=0; d <= today; d = new Date(d.getTime()+msPerDay), i++) {
+  for (let d = new Date(startD), i=0; d <= today; d = new Date(d.getTime()+msPerDay), i++) {{
     const week = Math.floor((d - startD)/msPerDay/7);
     const dow = (d.getDay()+6)%7; // Mon=0
     const x = padL + week*(cell+gap);
@@ -125,38 +127,38 @@
     rect.setAttribute('ry', 2);
     rect.setAttribute('fill', colorFor(sum));
 
-    rect.addEventListener('mousemove', (ev) => {
-      let text = key + (sum? ` • ${sum} file(s)`: ' • no new files');
-      if (sum && per[key] && per[key].by_folder) {
+    rect.addEventListener('mousemove', (ev) => {{
+      let text = key + (sum? ` • ${{sum}} file(s)`: ' • no new files');
+      if (sum && per[key] && per[key].by_folder) {{
         const pairs = Object.entries(per[key].by_folder).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0]));
-        for (const [f,c] of pairs) text += `\n${f}: ${c}`;
-      }
+        for (const [f,c] of pairs) text += `\n${{f}}: ${{c}}`;
+      }}
       showTip(ev.clientX, ev.clientY, text);
-    });
+    }});
     rect.addEventListener('mouseleave', hideTip);
 
     g.appendChild(rect);
-  }
+  }}
 
   document.getElementById('heatmap').appendChild(svg);
 
   // Stats
   const stats = [
-    [ `${totals.all_time_total} problems`, 'solved for all time' ],
-    [ `${totals.year_total} problems`, 'solved for the last year' ],
-    [ `${totals.month_total} problems`, 'solved for the last month' ],
-    [ `${totals.streak_all_time} days`, 'in a row max.' ],
-    [ `${totals.streak_year} days`, 'in a row for the last year' ],
-    [ `${totals.streak_month} days`, 'in a row for the last month' ],
+    [ `${{totals.all_time_total}} problems`, 'solved for all time' ],
+    [ `${{totals.year_total}} problems`, 'solved for the last year' ],
+    [ `${{totals.month_total}} problems`, 'solved for the last month' ],
+    [ `${{totals.streak_all_time}} days`, 'in a row max.' ],
+    [ `${{totals.streak_year}} days`, 'in a row for the last year' ],
+    [ `${{totals.streak_month}} days`, 'in a row for the last month' ],
   ];
   const statsEl = document.getElementById('stats');
-  for (const [big,cap] of stats) {
+  for (const [big,cap] of stats) {{
     const div = document.createElement('div');
     div.className = 'stat';
     const b = document.createElement('div'); b.className = 'big'; b.textContent = big;
     const c = document.createElement('div'); c.className = 'cap'; c.textContent = cap;
     div.appendChild(b); div.appendChild(c);
     statsEl.appendChild(div);
-  }
-})();
+  }}
+}})();
 </script>
