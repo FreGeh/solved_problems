@@ -1,9 +1,13 @@
 # Solutions
 > Here you can find all my solutions and sometimes explanations to them
 
-### Progress Heatmap (last ~3 months)
+### Progress (last 12 months)
 
-![Progress Heatmap](zadditional/heatmap.svg)
+<!-- Click for interactive (hover breakdowns) -->
+<a href="zadditional/docs/progress.html">
+  <img src="zadditional/progress_dashboard.svg" alt="Competitive programming progress heatmap and stats" width="1100">
+</a>
+<sub>Click the image for the interactive version with per-day folder breakdowns.</sub>
 
 ## Codeforces
 

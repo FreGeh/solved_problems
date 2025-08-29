@@ -5,8 +5,7 @@ on:
     branches: [ main, master ]
   workflow_dispatch:
   schedule:
-    # Daily at 03:17 UTC (~morning Europe/Berlin). Adjust if you like.
-    - cron: "17 3 * * *"
+    - cron: "17 3 * * *"   # daily
 
 permissions:
   contents: write
@@ -25,13 +24,21 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Generate heatmap
+      - name: Generate dashboards
         env:
           TARGET_DIRS: "CSES,USACO,atcoder,codechef,codeforces"
-          WINDOW_DAYS: "91"               # ~13 weeks
-          TZ_REGION: "Europe/Berlin"      # your local grouping
-          OUTPUT_SVG: "zadditional/heatmap.svg"
+          # last 12 months for the heatmap (dashboard shows “year” + “month” + all time stats)
+          WINDOW_DAYS: "365"
+          TZ_REGION: "Europe/Berlin"
+
+          # outputs (SVG for README, JSON for debugging, interactive HTML page)
+          OUTPUT_SVG_YEAR: "zadditional/heatmap_year.svg"
+          OUTPUT_DASHBOARD: "zadditional/progress_dashboard.svg"
           OUTPUT_JSON: "zadditional/heatmap_data.json"
+          OUTPUT_HTML: "zadditional/docs/progress.html"
+
+          # restrict counted files (comma-separated, leave empty for all)
+          ALLOWED_EXTS: ".cpp"
         run: |
           python3 zadditional/scripts/generate_heatmap.py
 
@@ -39,6 +46,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add zadditional/heatmap.svg zadditional/heatmap_data.json || true
-          git diff --cached --quiet || git commit -m "chore: update progress heatmap [skip ci]"
+          git add zadditional/heatmap_year.svg zadditional/progress_dashboard.svg zadditional/heatmap_data.json zadditional/docs/progress.html || true
+          git diff --cached --quiet || git commit -m "chore: update CP progress dashboard [skip ci]"
           git push
