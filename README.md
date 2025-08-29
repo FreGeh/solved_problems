@@ -4,7 +4,7 @@
 ### Progress (last 12 months)
 
 <a href="zadditional/docs/progress.html">
-  <img src="zadditional/progress_dashboard.svg" alt="Competitive programming progress heatmap and stats" width="1100">
+  <img src="zadditional/progress_dashboard.svg" alt="Competitive programming progress heatmap and stats">
 </a>
 
 ## Codeforces
