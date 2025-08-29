@@ -17,10 +17,10 @@ TARGET_DIRS = [d.strip() for d in os.environ.get("TARGET_DIRS", "CSES,USACO,atco
 WINDOW_DAYS = int(os.environ.get("WINDOW_DAYS", "365"))
 TZ_REGION = os.environ.get("TZ_REGION", "Europe/Berlin")
 
-OUTPUT_SVG_YEAR   = os.environ.get("OUTPUT_SVG_YEAR", "zadditional/heatmap_year.svg")
-OUTPUT_DASHBOARD  = os.environ.get("OUTPUT_DASHBOARD", "zadditional/progress_dashboard.svg")
-OUTPUT_JSON       = os.environ.get("OUTPUT_JSON", "zadditional/heatmap_data.json")
-OUTPUT_HTML       = os.environ.get("OUTPUT_HTML", "zadditional/docs/progress.html")
+OUTPUT_SVG_YEAR   = os.environ.get("OUTPUT_SVG_YEAR", ".github/.assets/heatmap_year.svg")
+OUTPUT_DASHBOARD  = os.environ.get("OUTPUT_DASHBOARD", ".github/.assets/progress_dashboard.svg")
+OUTPUT_JSON       = os.environ.get("OUTPUT_JSON", ".github/.assets/heatmap_data.json")
+OUTPUT_HTML       = os.environ.get("OUTPUT_HTML", ".github/.assets/docs/progress.html")
 
 # extensions filter
 exts_env = os.environ.get("ALLOWED_EXTS", "").strip()

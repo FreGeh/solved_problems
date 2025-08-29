@@ -1,7 +1,7 @@
 ### Progress (last 12 months) across all coding platforms
 
-<a href="zadditional/docs/progress.html">
-  <img src="zadditional/progress_dashboard.svg" alt="Competitive programming progress heatmap and stats">
+<a href=".github/.assets/docs/progress.html">
+  <img src=".github/.assets/progress_dashboard.svg" alt="Competitive programming progress heatmap and stats">
 </a>
 
 # Solutions

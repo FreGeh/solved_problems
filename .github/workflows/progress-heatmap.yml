@@ -32,20 +32,20 @@ jobs:
           TZ_REGION: "Europe/Berlin"
 
           # outputs (SVG for README, JSON for debugging, interactive HTML page)
-          OUTPUT_SVG_YEAR: "zadditional/heatmap_year.svg"
-          OUTPUT_DASHBOARD: "zadditional/progress_dashboard.svg"
-          OUTPUT_JSON: "zadditional/heatmap_data.json"
-          OUTPUT_HTML: "zadditional/docs/progress.html"
+          OUTPUT_SVG_YEAR: ".github/.assets/heatmap_year.svg"
+          OUTPUT_DASHBOARD: ".github/.assets/progress_dashboard.svg"
+          OUTPUT_JSON: ".github/.assets/heatmap_data.json"
+          OUTPUT_HTML: ".github/.assets/docs/progress.html"
 
           # restrict counted files (comma-separated, leave empty for all)
           ALLOWED_EXTS: ".cpp"
         run: |
-          python3 zadditional/scripts/generate_heatmap.py
+          python3 .github/.assets/scripts/generate_heatmap.py
 
       - name: Commit changes
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add zadditional/heatmap_year.svg zadditional/progress_dashboard.svg zadditional/heatmap_data.json zadditional/docs/progress.html || true
+          git add .github/.assets/heatmap_year.svg .github/.assets/progress_dashboard.svg .github/.assets/heatmap_data.json .github/.assets//docs/progress.html || true
           git diff --cached --quiet || git commit -m "chore: update CP progress dashboard [skip ci]"
           git push
