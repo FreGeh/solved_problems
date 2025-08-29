@@ -404,7 +404,7 @@ html = f"""<!doctype html>
   const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
   svg.setAttribute("width", width);
   svg.setAttribute("height", height);
-  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  svg.setAttribute("viewBox", `0 0 ${{width}} ${{height}}`);
   const g = document.createElementNS(svg.namespaceURI, "g");
   svg.appendChild(g);
 
@@ -414,7 +414,7 @@ html = f"""<!doctype html>
     for (let w=0; w<weeks; w++) {{
       const xDate = new Date(start); xDate.setDate(xDate.getDate() + w*7);
       const fm = new Date(xDate.getFullYear(), xDate.getMonth(), 1);
-      const key = `${fm.getFullYear()}-${fm.getMonth()}`;
+      const key = `${{fm.getFullYear()}}-${{fm.getMonth()}}`;
       if (!monthLabels.seen) monthLabels.seen = new Set();
       if (!monthLabels.seen.has(key) && fm >= new Date(cfg.grid_start) && fm <= new Date(DATA.config.today)) {{
         monthLabels.seen.add(key);
@@ -472,10 +472,10 @@ html = f"""<!doctype html>
     rect.setAttribute('fill', colorFor(sum));
 
     rect.addEventListener('mousemove', (ev) => {{
-      let text = key + (sum? ` • ${sum} file(s)`: ' • no new files');
+      let text = key + (sum? ` • ${{sum}} file(s)`: ' • no new files');
       if (sum && per[key] && per[key].by_folder) {{
         const pairs = Object.entries(per[key].by_folder).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0]));
-        for (const [f,c] of pairs) text += `\\n${f}: ${c}`;
+        for (const [f,c] of pairs) text += `\\n${{f}}: ${{c}}`;
       }}
       showTip(ev.clientX, ev.clientY, text);
     }});
@@ -488,12 +488,12 @@ html = f"""<!doctype html>
 
   // Stats
   const stats = [
-    [ `${totals.all_time_total} problems`, 'solved for all time' ],
-    [ `${totals.year_total} problems`, 'solved for the last year' ],
-    [ `${totals.month_total} problems`, 'solved for the last month' ],
-    [ `${totals.streak_all_time} days`, 'in a row max.' ],
-    [ `${totals.streak_year} days`, 'in a row for the last year' ],
-    [ `${totals.streak_month} days`, 'in a row for the last month' ],
+    [ `${{totals.all_time_total}} problems`, 'solved for all time' ],
+    [ `${{totals.year_total}} problems`, 'solved for the last year' ],
+    [ `${{totals.month_total}} problems`, 'solved for the last month' ],
+    [ `${{totals.streak_all_time}} days`, 'in a row max.' ],
+    [ `${{totals.streak_year}} days`, 'in a row for the last year' ],
+    [ `${{totals.streak_month}} days`, 'in a row for the last month' ],
   ];
   const statsEl = document.getElementById('stats');
   for (const [big,cap] of stats) {{
@@ -507,7 +507,7 @@ html = f"""<!doctype html>
 }})();
 </script>
 """
-# write HTML
+
 (REPO_ROOT / OUTPUT_HTML).parent.mkdir(parents=True, exist_ok=True)
 (REPO_ROOT / OUTPUT_HTML).write_text(html, encoding="utf-8")
 
