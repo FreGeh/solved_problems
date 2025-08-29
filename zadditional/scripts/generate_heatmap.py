@@ -32,7 +32,9 @@ GAP = 3          # spacing
 PAD_LEFT = 36    # y-axis labels gutter
 PAD_TOP = 18     # month labels gutter
 LEGEND_H = 28    # legend block
-FONT_SIZE = 20
+FONT_LABEL = 10          # small labels on the heatmap
+FONT_STATS_BIG = 20      # big number text in stats (e.g., "15 problems")
+FONT_STATS_CAP = 18      # small caption text in stats
 FONT_FAMILY = "system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif"
 
 GREEN_PALETTE = [
@@ -207,19 +209,19 @@ def render_year_heatmap_svg(title: str) -> str:
     parts.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">')
     parts.append(f'<title id="title">{esc(title)}</title>')
     parts.append(f'<desc id="desc">Each square shows the number of new files first added that day. Open the interactive page for hover details.</desc>')
-    parts.append(f'<style>text{{font-family:{FONT_FAMILY};font-size:{FONT_SIZE}px;}}</style>')
+    parts.append(f'<style>text{{font-family:{FONT_FAMILY};}}</style>')
 
     # Month labels
     for w, fm in ms:
         x = PAD_LEFT + w*(CELL+GAP)
         label = fm.strftime("%b")
-        parts.append(f'<text x="{x}" y="{FONT_SIZE+2}" fill="#555">{label}</text>')
+        parts.append(f'<text x="{x}" y="{FONT_LABEL+2}" fill="#555">{label}</text>')
 
     # Weekday labels (Mon, Wed, Fri for compact display)
     weekday_labels = {0: "Mon", 2: "Wed", 4: "Fri"}
     for r in weekday_labels:
         y = PAD_TOP + r*(CELL+GAP) + CELL - 2
-        parts.append(f'<text x="0" y="{y}" fill="#777">{weekday_labels[r]}</text>')
+        parts.append(f'<text x="0" y="{y}" font-size="{FONT_LABEL}" fill="#777">{weekday_labels[r]}</text>')
 
     # Cells
     for d in days:
@@ -248,12 +250,12 @@ def render_year_heatmap_svg(title: str) -> str:
     legend_x = PAD_LEFT
     legend_y = PAD_TOP + 7*(CELL+GAP) + 14
     legend_vals = [0, max(1, q1), max(1, q2), max(1, q3), maxv]
-    parts.append(f'<text x="{legend_x}" y="{legend_y-6}" fill="#555">Intensity</text>')
+    parts.append(f'<text x="{legend_x}" y="{legend_y-6}" font-size="{FONT_LABEL}" fill="#555">Intensity</text>')
     lx = legend_x
     for i, val in enumerate(legend_vals):
         parts.append(f'<rect x="{lx}" y="{legend_y}" width="{CELL}" height="{CELL}" rx="2" ry="2" fill="{GREEN_PALETTE[i]}"><title>≈ {val}</title></rect>')
         lx += CELL + 4
-    parts.append(f'<text x="{lx+4}" y="{legend_y+CELL-2}" fill="#777">{start_date_window.isoformat()} → {today_local.isoformat()}</text>')
+    parts.append(f'<text x="{lx+4}" y="{legend_y+CELL-2}" font-size="{FONT_LABEL}" fill="#777">{start_date_window.isoformat()} → {today_local.isoformat()}</text>')
 
     parts.append('</svg>')
     return "\n".join(parts)
@@ -268,8 +270,9 @@ def render_dashboard_svg() -> str:
     STAT_COLS = 3
     STAT_ROWS = 2
     STAT_CELL_W = heatmap_width // STAT_COLS
-    STAT_LINE1 = 24  # large number
-    STAT_LINE2 = 14  # caption
+    STAT_LINE1 = FONT_STATS_BIG  # 20
+    STAT_LINE2 = FONT_STATS_CAP  # 10
+
 
     stats_h = STAT_ROWS * 60 + 12
     width = heatmap_width
@@ -423,6 +426,7 @@ html = f"""<!doctype html>
         t.setAttribute('x', x);
         t.setAttribute('y', 12);
         t.setAttribute('fill', '#555');
+        t.setAttribute('font-size', """ + str(FONT_LABEL) + """);
         t.textContent = fm.toLocaleString(undefined, {{month:'short'}});
         g.appendChild(t);
       }}
@@ -437,6 +441,7 @@ html = f"""<!doctype html>
     t.setAttribute('x', 0);
     t.setAttribute('y', padT + r*(cell+gap) + cell - 2);
     t.setAttribute('fill', '#777');
+    t.setAttribute('font-size', """ + str(FONT_LABEL) + """);
     t.textContent = weekdays[r];
     g.appendChild(t);
   }}
