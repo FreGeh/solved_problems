@@ -1,11 +1,11 @@
-# Solutions
-> Here you can find all my solutions and sometimes explanations to them
-
 ### Progress (last 12 months)
 
 <a href="zadditional/docs/progress.html">
   <img src="zadditional/progress_dashboard.svg" alt="Competitive programming progress heatmap and stats">
 </a>
+
+# Solutions
+> Here you can find all my solutions and sometimes explanations to them
 
 ## Codeforces
 
