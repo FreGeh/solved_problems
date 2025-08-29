@@ -1,0 +1,162 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>CP Progress Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --fg:#24292e; --muted:#57606a; --grid0:#ebedf0; --bg:#fff;
+  }
+  html,body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif; }
+  .wrap { max-width: 1200px; margin: 24px auto; padding: 0 16px; }
+  h1 { font-size: 20px; margin: 0 0 12px; }
+  .legend { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  #tooltip {
+    position: fixed; pointer-events: none; background: #111; color:#fff;
+    padding: 6px 8px; border-radius: 6px; font-size: 12px; line-height: 1.35;
+    box-shadow: 0 4px 16px rgba(0,0,0,.25); z-index: 10; opacity: 0; transition: opacity .08s ease;
+    white-space: pre; max-width: 60vw;
+  }
+  .stats { display:grid; grid-template-columns: repeat(3, 1fr); gap: 8px 24px; margin-top: 16px; }
+  .stat .big { font-weight: 700; font-size: 22px; }
+  .stat .cap { color: var(--muted); font-size: 14px; }
+  @media (max-width: 820px) {
+    .stats { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="wrap">
+  <h1>Competitive Programming Progress — last 12 months</h1>
+  <div id="heatmap"></div>
+  <div class="legend">Hover squares for total and folder breakdown • 2024-08-30 → 2025-08-29</div>
+
+  <div class="stats" id="stats"></div>
+</div>
+
+<div id="tooltip"></div>
+
+<script id="data" type="application/json">{"config":{"target_dirs":["CSES","USACO","atcoder","codechef","codeforces"],"timezone":"Europe/Berlin","window_days":365,"start_date_window":"2024-08-30","today":"2025-08-29","grid_start":"2024-08-26","grid_weeks":53,"q1":3,"q2":5,"q3":7,"max":10,"palette":["#ebedf0","#c6e48b","#7bc96f","#239a3b","#196127"],"cell":13,"gap":3,"pad_left":36,"pad_top":18},"totals":{"all_time_total":45,"year_total":45,"month_total":45,"streak_all_time":3,"streak_year":3,"streak_month":3},"per_day_year":{"2024-08-26":{"total":0,"by_folder":{}},"2024-08-27":{"total":0,"by_folder":{}},"2024-08-28":{"total":0,"by_folder":{}},"2024-08-29":{"total":0,"by_folder":{}},"2024-08-30":{"total":0,"by_folder":{}},"2024-08-31":{"total":0,"by_folder":{}},"2024-09-01":{"total":0,"by_folder":{}},"2024-09-02":{"total":0,"by_folder":{}},"2024-09-03":{"total":0,"by_folder":{}},"2024-09-04":{"total":0,"by_folder":{}},"2024-09-05":{"total":0,"by_folder":{}},"2024-09-06":{"total":0,"by_folder":{}},"2024-09-07":{"total":0,"by_folder":{}},"2024-09-08":{"total":0,"by_folder":{}},"2024-09-09":{"total":0,"by_folder":{}},"2024-09-10":{"total":0,"by_folder":{}},"2024-09-11":{"total":0,"by_folder":{}},"2024-09-12":{"total":0,"by_folder":{}},"2024-09-13":{"total":0,"by_folder":{}},"2024-09-14":{"total":0,"by_folder":{}},"2024-09-15":{"total":0,"by_folder":{}},"2024-09-16":{"total":0,"by_folder":{}},"2024-09-17":{"total":0,"by_folder":{}},"2024-09-18":{"total":0,"by_folder":{}},"2024-09-19":{"total":0,"by_folder":{}},"2024-09-20":{"total":0,"by_folder":{}},"2024-09-21":{"total":0,"by_folder":{}},"2024-09-22":{"total":0,"by_folder":{}},"2024-09-23":{"total":0,"by_folder":{}},"2024-09-24":{"total":0,"by_folder":{}},"2024-09-25":{"total":0,"by_folder":{}},"2024-09-26":{"total":0,"by_folder":{}},"2024-09-27":{"total":0,"by_folder":{}},"2024-09-28":{"total":0,"by_folder":{}},"2024-09-29":{"total":0,"by_folder":{}},"2024-09-30":{"total":0,"by_folder":{}},"2024-10-01":{"total":0,"by_folder":{}},"2024-10-02":{"total":0,"by_folder":{}},"2024-10-03":{"total":0,"by_folder":{}},"2024-10-04":{"total":0,"by_folder":{}},"2024-10-05":{"total":0,"by_folder":{}},"2024-10-06":{"total":0,"by_folder":{}},"2024-10-07":{"total":0,"by_folder":{}},"2024-10-08":{"total":0,"by_folder":{}},"2024-10-09":{"total":0,"by_folder":{}},"2024-10-10":{"total":0,"by_folder":{}},"2024-10-11":{"total":0,"by_folder":{}},"2024-10-12":{"total":0,"by_folder":{}},"2024-10-13":{"total":0,"by_folder":{}},"2024-10-14":{"total":0,"by_folder":{}},"2024-10-15":{"total":0,"by_folder":{}},"2024-10-16":{"total":0,"by_folder":{}},"2024-10-17":{"total":0,"by_folder":{}},"2024-10-18":{"total":0,"by_folder":{}},"2024-10-19":{"total":0,"by_folder":{}},"2024-10-20":{"total":0,"by_folder":{}},"2024-10-21":{"total":0,"by_folder":{}},"2024-10-22":{"total":0,"by_folder":{}},"2024-10-23":{"total":0,"by_folder":{}},"2024-10-24":{"total":0,"by_folder":{}},"2024-10-25":{"total":0,"by_folder":{}},"2024-10-26":{"total":0,"by_folder":{}},"2024-10-27":{"total":0,"by_folder":{}},"2024-10-28":{"total":0,"by_folder":{}},"2024-10-29":{"total":0,"by_folder":{}},"2024-10-30":{"total":0,"by_folder":{}},"2024-10-31":{"total":0,"by_folder":{}},"2024-11-01":{"total":0,"by_folder":{}},"2024-11-02":{"total":0,"by_folder":{}},"2024-11-03":{"total":0,"by_folder":{}},"2024-11-04":{"total":0,"by_folder":{}},"2024-11-05":{"total":0,"by_folder":{}},"2024-11-06":{"total":0,"by_folder":{}},"2024-11-07":{"total":0,"by_folder":{}},"2024-11-08":{"total":0,"by_folder":{}},"2024-11-09":{"total":0,"by_folder":{}},"2024-11-10":{"total":0,"by_folder":{}},"2024-11-11":{"total":0,"by_folder":{}},"2024-11-12":{"total":0,"by_folder":{}},"2024-11-13":{"total":0,"by_folder":{}},"2024-11-14":{"total":0,"by_folder":{}},"2024-11-15":{"total":0,"by_folder":{}},"2024-11-16":{"total":0,"by_folder":{}},"2024-11-17":{"total":0,"by_folder":{}},"2024-11-18":{"total":0,"by_folder":{}},"2024-11-19":{"total":0,"by_folder":{}},"2024-11-20":{"total":0,"by_folder":{}},"2024-11-21":{"total":0,"by_folder":{}},"2024-11-22":{"total":0,"by_folder":{}},"2024-11-23":{"total":0,"by_folder":{}},"2024-11-24":{"total":0,"by_folder":{}},"2024-11-25":{"total":0,"by_folder":{}},"2024-11-26":{"total":0,"by_folder":{}},"2024-11-27":{"total":0,"by_folder":{}},"2024-11-28":{"total":0,"by_folder":{}},"2024-11-29":{"total":0,"by_folder":{}},"2024-11-30":{"total":0,"by_folder":{}},"2024-12-01":{"total":0,"by_folder":{}},"2024-12-02":{"total":0,"by_folder":{}},"2024-12-03":{"total":0,"by_folder":{}},"2024-12-04":{"total":0,"by_folder":{}},"2024-12-05":{"total":0,"by_folder":{}},"2024-12-06":{"total":0,"by_folder":{}},"2024-12-07":{"total":0,"by_folder":{}},"2024-12-08":{"total":0,"by_folder":{}},"2024-12-09":{"total":0,"by_folder":{}},"2024-12-10":{"total":0,"by_folder":{}},"2024-12-11":{"total":0,"by_folder":{}},"2024-12-12":{"total":0,"by_folder":{}},"2024-12-13":{"total":0,"by_folder":{}},"2024-12-14":{"total":0,"by_folder":{}},"2024-12-15":{"total":0,"by_folder":{}},"2024-12-16":{"total":0,"by_folder":{}},"2024-12-17":{"total":0,"by_folder":{}},"2024-12-18":{"total":0,"by_folder":{}},"2024-12-19":{"total":0,"by_folder":{}},"2024-12-20":{"total":0,"by_folder":{}},"2024-12-21":{"total":0,"by_folder":{}},"2024-12-22":{"total":0,"by_folder":{}},"2024-12-23":{"total":0,"by_folder":{}},"2024-12-24":{"total":0,"by_folder":{}},"2024-12-25":{"total":0,"by_folder":{}},"2024-12-26":{"total":0,"by_folder":{}},"2024-12-27":{"total":0,"by_folder":{}},"2024-12-28":{"total":0,"by_folder":{}},"2024-12-29":{"total":0,"by_folder":{}},"2024-12-30":{"total":0,"by_folder":{}},"2024-12-31":{"total":0,"by_folder":{}},"2025-01-01":{"total":0,"by_folder":{}},"2025-01-02":{"total":0,"by_folder":{}},"2025-01-03":{"total":0,"by_folder":{}},"2025-01-04":{"total":0,"by_folder":{}},"2025-01-05":{"total":0,"by_folder":{}},"2025-01-06":{"total":0,"by_folder":{}},"2025-01-07":{"total":0,"by_folder":{}},"2025-01-08":{"total":0,"by_folder":{}},"2025-01-09":{"total":0,"by_folder":{}},"2025-01-10":{"total":0,"by_folder":{}},"2025-01-11":{"total":0,"by_folder":{}},"2025-01-12":{"total":0,"by_folder":{}},"2025-01-13":{"total":0,"by_folder":{}},"2025-01-14":{"total":0,"by_folder":{}},"2025-01-15":{"total":0,"by_folder":{}},"2025-01-16":{"total":0,"by_folder":{}},"2025-01-17":{"total":0,"by_folder":{}},"2025-01-18":{"total":0,"by_folder":{}},"2025-01-19":{"total":0,"by_folder":{}},"2025-01-20":{"total":0,"by_folder":{}},"2025-01-21":{"total":0,"by_folder":{}},"2025-01-22":{"total":0,"by_folder":{}},"2025-01-23":{"total":0,"by_folder":{}},"2025-01-24":{"total":0,"by_folder":{}},"2025-01-25":{"total":0,"by_folder":{}},"2025-01-26":{"total":0,"by_folder":{}},"2025-01-27":{"total":0,"by_folder":{}},"2025-01-28":{"total":0,"by_folder":{}},"2025-01-29":{"total":0,"by_folder":{}},"2025-01-30":{"total":0,"by_folder":{}},"2025-01-31":{"total":0,"by_folder":{}},"2025-02-01":{"total":0,"by_folder":{}},"2025-02-02":{"total":0,"by_folder":{}},"2025-02-03":{"total":0,"by_folder":{}},"2025-02-04":{"total":0,"by_folder":{}},"2025-02-05":{"total":0,"by_folder":{}},"2025-02-06":{"total":0,"by_folder":{}},"2025-02-07":{"total":0,"by_folder":{}},"2025-02-08":{"total":0,"by_folder":{}},"2025-02-09":{"total":0,"by_folder":{}},"2025-02-10":{"total":0,"by_folder":{}},"2025-02-11":{"total":0,"by_folder":{}},"2025-02-12":{"total":0,"by_folder":{}},"2025-02-13":{"total":0,"by_folder":{}},"2025-02-14":{"total":0,"by_folder":{}},"2025-02-15":{"total":0,"by_folder":{}},"2025-02-16":{"total":0,"by_folder":{}},"2025-02-17":{"total":0,"by_folder":{}},"2025-02-18":{"total":0,"by_folder":{}},"2025-02-19":{"total":0,"by_folder":{}},"2025-02-20":{"total":0,"by_folder":{}},"2025-02-21":{"total":0,"by_folder":{}},"2025-02-22":{"total":0,"by_folder":{}},"2025-02-23":{"total":0,"by_folder":{}},"2025-02-24":{"total":0,"by_folder":{}},"2025-02-25":{"total":0,"by_folder":{}},"2025-02-26":{"total":0,"by_folder":{}},"2025-02-27":{"total":0,"by_folder":{}},"2025-02-28":{"total":0,"by_folder":{}},"2025-03-01":{"total":0,"by_folder":{}},"2025-03-02":{"total":0,"by_folder":{}},"2025-03-03":{"total":0,"by_folder":{}},"2025-03-04":{"total":0,"by_folder":{}},"2025-03-05":{"total":0,"by_folder":{}},"2025-03-06":{"total":0,"by_folder":{}},"2025-03-07":{"total":0,"by_folder":{}},"2025-03-08":{"total":0,"by_folder":{}},"2025-03-09":{"total":0,"by_folder":{}},"2025-03-10":{"total":0,"by_folder":{}},"2025-03-11":{"total":0,"by_folder":{}},"2025-03-12":{"total":0,"by_folder":{}},"2025-03-13":{"total":0,"by_folder":{}},"2025-03-14":{"total":0,"by_folder":{}},"2025-03-15":{"total":0,"by_folder":{}},"2025-03-16":{"total":0,"by_folder":{}},"2025-03-17":{"total":0,"by_folder":{}},"2025-03-18":{"total":0,"by_folder":{}},"2025-03-19":{"total":0,"by_folder":{}},"2025-03-20":{"total":0,"by_folder":{}},"2025-03-21":{"total":0,"by_folder":{}},"2025-03-22":{"total":0,"by_folder":{}},"2025-03-23":{"total":0,"by_folder":{}},"2025-03-24":{"total":0,"by_folder":{}},"2025-03-25":{"total":0,"by_folder":{}},"2025-03-26":{"total":0,"by_folder":{}},"2025-03-27":{"total":0,"by_folder":{}},"2025-03-28":{"total":0,"by_folder":{}},"2025-03-29":{"total":0,"by_folder":{}},"2025-03-30":{"total":0,"by_folder":{}},"2025-03-31":{"total":0,"by_folder":{}},"2025-04-01":{"total":0,"by_folder":{}},"2025-04-02":{"total":0,"by_folder":{}},"2025-04-03":{"total":0,"by_folder":{}},"2025-04-04":{"total":0,"by_folder":{}},"2025-04-05":{"total":0,"by_folder":{}},"2025-04-06":{"total":0,"by_folder":{}},"2025-04-07":{"total":0,"by_folder":{}},"2025-04-08":{"total":0,"by_folder":{}},"2025-04-09":{"total":0,"by_folder":{}},"2025-04-10":{"total":0,"by_folder":{}},"2025-04-11":{"total":0,"by_folder":{}},"2025-04-12":{"total":0,"by_folder":{}},"2025-04-13":{"total":0,"by_folder":{}},"2025-04-14":{"total":0,"by_folder":{}},"2025-04-15":{"total":0,"by_folder":{}},"2025-04-16":{"total":0,"by_folder":{}},"2025-04-17":{"total":0,"by_folder":{}},"2025-04-18":{"total":0,"by_folder":{}},"2025-04-19":{"total":0,"by_folder":{}},"2025-04-20":{"total":0,"by_folder":{}},"2025-04-21":{"total":0,"by_folder":{}},"2025-04-22":{"total":0,"by_folder":{}},"2025-04-23":{"total":0,"by_folder":{}},"2025-04-24":{"total":0,"by_folder":{}},"2025-04-25":{"total":0,"by_folder":{}},"2025-04-26":{"total":0,"by_folder":{}},"2025-04-27":{"total":0,"by_folder":{}},"2025-04-28":{"total":0,"by_folder":{}},"2025-04-29":{"total":0,"by_folder":{}},"2025-04-30":{"total":0,"by_folder":{}},"2025-05-01":{"total":0,"by_folder":{}},"2025-05-02":{"total":0,"by_folder":{}},"2025-05-03":{"total":0,"by_folder":{}},"2025-05-04":{"total":0,"by_folder":{}},"2025-05-05":{"total":0,"by_folder":{}},"2025-05-06":{"total":0,"by_folder":{}},"2025-05-07":{"total":0,"by_folder":{}},"2025-05-08":{"total":0,"by_folder":{}},"2025-05-09":{"total":0,"by_folder":{}},"2025-05-10":{"total":0,"by_folder":{}},"2025-05-11":{"total":0,"by_folder":{}},"2025-05-12":{"total":0,"by_folder":{}},"2025-05-13":{"total":0,"by_folder":{}},"2025-05-14":{"total":0,"by_folder":{}},"2025-05-15":{"total":0,"by_folder":{}},"2025-05-16":{"total":0,"by_folder":{}},"2025-05-17":{"total":0,"by_folder":{}},"2025-05-18":{"total":0,"by_folder":{}},"2025-05-19":{"total":0,"by_folder":{}},"2025-05-20":{"total":0,"by_folder":{}},"2025-05-21":{"total":0,"by_folder":{}},"2025-05-22":{"total":0,"by_folder":{}},"2025-05-23":{"total":0,"by_folder":{}},"2025-05-24":{"total":0,"by_folder":{}},"2025-05-25":{"total":0,"by_folder":{}},"2025-05-26":{"total":0,"by_folder":{}},"2025-05-27":{"total":0,"by_folder":{}},"2025-05-28":{"total":0,"by_folder":{}},"2025-05-29":{"total":0,"by_folder":{}},"2025-05-30":{"total":0,"by_folder":{}},"2025-05-31":{"total":0,"by_folder":{}},"2025-06-01":{"total":0,"by_folder":{}},"2025-06-02":{"total":0,"by_folder":{}},"2025-06-03":{"total":0,"by_folder":{}},"2025-06-04":{"total":0,"by_folder":{}},"2025-06-05":{"total":0,"by_folder":{}},"2025-06-06":{"total":0,"by_folder":{}},"2025-06-07":{"total":0,"by_folder":{}},"2025-06-08":{"total":0,"by_folder":{}},"2025-06-09":{"total":0,"by_folder":{}},"2025-06-10":{"total":0,"by_folder":{}},"2025-06-11":{"total":0,"by_folder":{}},"2025-06-12":{"total":0,"by_folder":{}},"2025-06-13":{"total":0,"by_folder":{}},"2025-06-14":{"total":0,"by_folder":{}},"2025-06-15":{"total":0,"by_folder":{}},"2025-06-16":{"total":0,"by_folder":{}},"2025-06-17":{"total":0,"by_folder":{}},"2025-06-18":{"total":0,"by_folder":{}},"2025-06-19":{"total":0,"by_folder":{}},"2025-06-20":{"total":0,"by_folder":{}},"2025-06-21":{"total":0,"by_folder":{}},"2025-06-22":{"total":0,"by_folder":{}},"2025-06-23":{"total":0,"by_folder":{}},"2025-06-24":{"total":0,"by_folder":{}},"2025-06-25":{"total":0,"by_folder":{}},"2025-06-26":{"total":0,"by_folder":{}},"2025-06-27":{"total":0,"by_folder":{}},"2025-06-28":{"total":0,"by_folder":{}},"2025-06-29":{"total":0,"by_folder":{}},"2025-06-30":{"total":0,"by_folder":{}},"2025-07-01":{"total":0,"by_folder":{}},"2025-07-02":{"total":0,"by_folder":{}},"2025-07-03":{"total":0,"by_folder":{}},"2025-07-04":{"total":0,"by_folder":{}},"2025-07-05":{"total":0,"by_folder":{}},"2025-07-06":{"total":0,"by_folder":{}},"2025-07-07":{"total":0,"by_folder":{}},"2025-07-08":{"total":0,"by_folder":{}},"2025-07-09":{"total":0,"by_folder":{}},"2025-07-10":{"total":0,"by_folder":{}},"2025-07-11":{"total":0,"by_folder":{}},"2025-07-12":{"total":0,"by_folder":{}},"2025-07-13":{"total":0,"by_folder":{}},"2025-07-14":{"total":0,"by_folder":{}},"2025-07-15":{"total":0,"by_folder":{}},"2025-07-16":{"total":0,"by_folder":{}},"2025-07-17":{"total":0,"by_folder":{}},"2025-07-18":{"total":0,"by_folder":{}},"2025-07-19":{"total":0,"by_folder":{}},"2025-07-20":{"total":0,"by_folder":{}},"2025-07-21":{"total":0,"by_folder":{}},"2025-07-22":{"total":0,"by_folder":{}},"2025-07-23":{"total":0,"by_folder":{}},"2025-07-24":{"total":0,"by_folder":{}},"2025-07-25":{"total":0,"by_folder":{}},"2025-07-26":{"total":0,"by_folder":{}},"2025-07-27":{"total":0,"by_folder":{}},"2025-07-28":{"total":0,"by_folder":{}},"2025-07-29":{"total":0,"by_folder":{}},"2025-07-30":{"total":0,"by_folder":{}},"2025-07-31":{"total":0,"by_folder":{}},"2025-08-01":{"total":6,"by_folder":{"CSES":1,"atcoder":2,"codeforces":3}},"2025-08-02":{"total":0,"by_folder":{}},"2025-08-03":{"total":0,"by_folder":{}},"2025-08-04":{"total":0,"by_folder":{}},"2025-08-05":{"total":0,"by_folder":{}},"2025-08-06":{"total":0,"by_folder":{}},"2025-08-07":{"total":0,"by_folder":{}},"2025-08-08":{"total":0,"by_folder":{}},"2025-08-09":{"total":0,"by_folder":{}},"2025-08-10":{"total":3,"by_folder":{"codeforces":3}},"2025-08-11":{"total":3,"by_folder":{"CSES":3}},"2025-08-12":{"total":3,"by_folder":{"CSES":3}},"2025-08-13":{"total":0,"by_folder":{}},"2025-08-14":{"total":0,"by_folder":{}},"2025-08-15":{"total":0,"by_folder":{}},"2025-08-16":{"total":7,"by_folder":{"atcoder":4,"codechef":3}},"2025-08-17":{"total":0,"by_folder":{}},"2025-08-18":{"total":0,"by_folder":{}},"2025-08-19":{"total":0,"by_folder":{}},"2025-08-20":{"total":0,"by_folder":{}},"2025-08-21":{"total":0,"by_folder":{}},"2025-08-22":{"total":0,"by_folder":{}},"2025-08-23":{"total":5,"by_folder":{"CSES":5}},"2025-08-24":{"total":10,"by_folder":{"CSES":2,"atcoder":3,"codeforces":5}},"2025-08-25":{"total":1,"by_folder":{"codeforces":1}},"2025-08-26":{"total":0,"by_folder":{}},"2025-08-27":{"total":0,"by_folder":{}},"2025-08-28":{"total":7,"by_folder":{"CSES":2,"USACO":3,"codeforces":2}},"2025-08-29":{"total":0,"by_folder":{}}},"per_day_all":{"2025-08-01":{"total":6,"by_folder":{"CSES":1,"atcoder":2,"codeforces":3}},"2025-08-10":{"total":3,"by_folder":{"codeforces":3}},"2025-08-11":{"total":3,"by_folder":{"CSES":3}},"2025-08-12":{"total":3,"by_folder":{"CSES":3}},"2025-08-16":{"total":7,"by_folder":{"atcoder":4,"codechef":3}},"2025-08-23":{"total":5,"by_folder":{"CSES":5}},"2025-08-24":{"total":10,"by_folder":{"CSES":2,"atcoder":3,"codeforces":5}},"2025-08-25":{"total":1,"by_folder":{"codeforces":1}},"2025-08-28":{"total":7,"by_folder":{"CSES":2,"USACO":3,"codeforces":2}}}}</script>
+<script>
+(function() {
+  const DATA = JSON.parse(document.getElementById('data').textContent);
+  const cfg = DATA.config, totals = DATA.totals, per = DATA.per_day_year;
+  const cell = cfg.cell, gap = cfg.gap, padL = cfg.pad_left, padT = cfg.pad_top;
+  const weeks = cfg.grid_weeks;
+  const width = padL + weeks * (cell + gap);
+  const height = padT + 7 * (cell + gap) + 28;
+
+  const palette = cfg.palette;
+  const q1 = DATA.config.q1, q2 = DATA.config.q2, q3 = DATA.config.q3, vmax = DATA.config.max;
+
+  function colorFor(v) {
+    if (v <= 0) return palette[0];
+    if (v <= Math.max(1, q1)) return palette[1];
+    if (v <= Math.max(1, q2)) return palette[2];
+    if (v <= Math.max(1, q3)) return palette[3];
+    return palette[4];
+  }
+
+  const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
+  svg.setAttribute("width", width);
+  svg.setAttribute("height", height);
+  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  const g = document.createElementNS(svg.namespaceURI, "g");
+  svg.appendChild(g);
+
+  // Month labels
+  (function monthLabels(){
+    const start = new Date(cfg.grid_start);
+    for (let w=0; w<weeks; w++) {
+      const xDate = new Date(start); xDate.setDate(xDate.getDate() + w*7);
+      const fm = new Date(xDate.getFullYear(), xDate.getMonth(), 1);
+      const key = `${fm.getFullYear()}-${fm.getMonth()}`;
+      if (!monthLabels.seen) monthLabels.seen = new Set();
+      if (!monthLabels.seen.has(key) && fm >= new Date(cfg.grid_start) && fm <= new Date(DATA.config.today)) {
+        monthLabels.seen.add(key);
+        const x = padL + w*(cell+gap);
+        const t = document.createElementNS(svg.namespaceURI, 'text');
+        t.setAttribute('x', x);
+        t.setAttribute('y', 12);
+        t.setAttribute('fill', '#555');
+        t.textContent = fm.toLocaleString(undefined, {month:'short'});
+        g.appendChild(t);
+      }
+    }
+  })();
+
+  // Weekday labels
+  const weekdays = {0:'Mon',2:'Wed',4:'Fri'};
+  for (const k of Object.keys(weekdays)) {
+    const r = +k;
+    const t = document.createElementNS(svg.namespaceURI, 'text');
+    t.setAttribute('x', 0);
+    t.setAttribute('y', padT + r*(cell+gap) + cell - 2);
+    t.setAttribute('fill', '#777');
+    t.textContent = weekdays[r];
+    g.appendChild(t);
+  }
+
+  // Cells
+  const startD = new Date(cfg.grid_start), today = new Date(DATA.config.today);
+  const msPerDay = 86400000;
+  const tooltip = document.getElementById('tooltip');
+
+  function showTip(x,y,text) {
+    tooltip.textContent = text;
+    tooltip.style.left = (x + 14) + 'px';
+    tooltip.style.top = (y + 14) + 'px';
+    tooltip.style.opacity = 1;
+  }
+  function hideTip() { tooltip.style.opacity = 0; }
+
+  for (let d = new Date(startD), i=0; d <= today; d = new Date(d.getTime()+msPerDay), i++) {
+    const week = Math.floor((d - startD)/msPerDay/7);
+    const dow = (d.getDay()+6)%7; // Mon=0
+    const x = padL + week*(cell+gap);
+    const y = padT + dow*(cell+gap);
+
+    const key = d.toISOString().slice(0,10);
+    const sum = per[key] ? per[key].total : 0;
+    const rect = document.createElementNS(svg.namespaceURI, 'rect');
+    rect.setAttribute('x', x);
+    rect.setAttribute('y', y);
+    rect.setAttribute('width', cell);
+    rect.setAttribute('height', cell);
+    rect.setAttribute('rx', 2);
+    rect.setAttribute('ry', 2);
+    rect.setAttribute('fill', colorFor(sum));
+
+    rect.addEventListener('mousemove', (ev) => {
+      let text = key + (sum? ` • ${sum} file(s)`: ' • no new files');
+      if (sum && per[key] && per[key].by_folder) {
+        const pairs = Object.entries(per[key].by_folder).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0]));
+        for (const [f,c] of pairs) text += `\n${f}: ${c}`;
+      }
+      showTip(ev.clientX, ev.clientY, text);
+    });
+    rect.addEventListener('mouseleave', hideTip);
+
+    g.appendChild(rect);
+  }
+
+  document.getElementById('heatmap').appendChild(svg);
+
+  // Stats
+  const stats = [
+    [ `${totals.all_time_total} problems`, 'solved for all time' ],
+    [ `${totals.year_total} problems`, 'solved for the last year' ],
+    [ `${totals.month_total} problems`, 'solved for the last month' ],
+    [ `${totals.streak_all_time} days`, 'in a row max.' ],
+    [ `${totals.streak_year} days`, 'in a row for the last year' ],
+    [ `${totals.streak_month} days`, 'in a row for the last month' ],
+  ];
+  const statsEl = document.getElementById('stats');
+  for (const [big,cap] of stats) {
+    const div = document.createElement('div');
+    div.className = 'stat';
+    const b = document.createElement('div'); b.className = 'big'; b.textContent = big;
+    const c = document.createElement('div'); c.className = 'cap'; c.textContent = cap;
+    div.appendChild(b); div.appendChild(c);
+    statsEl.appendChild(div);
+  }
+})();
+</script>
