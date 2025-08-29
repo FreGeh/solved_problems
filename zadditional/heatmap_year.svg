@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="884" height="158" viewBox="0 0 884 158" role="img" aria-labelledby="title desc">
 <title id="title">Competitive Programming Progress - last 365 days</title>
 <desc id="desc">Each square shows the number of new files first added that day. Open the interactive page for hover details.</desc>
-<style>text{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;font-size:10px;}</style>
-<text x="52" y="12" fill="#555">Sep</text>
-<text x="132" y="12" fill="#555">Oct</text>
-<text x="196" y="12" fill="#555">Nov</text>
-<text x="260" y="12" fill="#555">Dec</text>
-<text x="340" y="12" fill="#555">Jan</text>
-<text x="404" y="12" fill="#555">Feb</text>
-<text x="468" y="12" fill="#555">Mar</text>
-<text x="548" y="12" fill="#555">Apr</text>
-<text x="612" y="12" fill="#555">May</text>
-<text x="676" y="12" fill="#555">Jun</text>
-<text x="756" y="12" fill="#555">Jul</text>
-<text x="820" y="12" fill="#555">Aug</text>
+<style>text{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;font-size:20px;}</style>
+<text x="52" y="22" fill="#555">Sep</text>
+<text x="132" y="22" fill="#555">Oct</text>
+<text x="196" y="22" fill="#555">Nov</text>
+<text x="260" y="22" fill="#555">Dec</text>
+<text x="340" y="22" fill="#555">Jan</text>
+<text x="404" y="22" fill="#555">Feb</text>
+<text x="468" y="22" fill="#555">Mar</text>
+<text x="548" y="22" fill="#555">Apr</text>
+<text x="612" y="22" fill="#555">May</text>
+<text x="676" y="22" fill="#555">Jun</text>
+<text x="756" y="22" fill="#555">Jul</text>
+<text x="820" y="22" fill="#555">Aug</text>
 <text x="0" y="29" fill="#777">Mon</text>
 <text x="0" y="61" fill="#777">Wed</text>
 <text x="0" y="93" fill="#777">Fri</text>
@@ -387,7 +387,7 @@ codechef: 3</title></rect>
 <rect x="852" y="50" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-08-20 • no new files</title></rect>
 <rect x="852" y="66" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-08-21 • no new files</title></rect>
 <rect x="852" y="82" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-08-22 • no new files</title></rect>
-<rect x="852" y="98" width="13" height="13" rx="2" ry="2" fill="#7bc96f"><title>2025-08-23 • 5 file(s)
+<rect x="852" y="98" width="13" height="13" rx="2" ry="2" fill="#239a3b"><title>2025-08-23 • 5 file(s)
 CSES: 5</title></rect>
 <rect x="852" y="114" width="13" height="13" rx="2" ry="2" fill="#196127"><title>2025-08-24 • 10 file(s)
 codeforces: 5
@@ -401,11 +401,12 @@ codeforces: 1</title></rect>
 USACO: 3
 codeforces: 2
 CSES: 2</title></rect>
-<rect x="868" y="82" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-08-29 • no new files</title></rect>
+<rect x="868" y="82" width="13" height="13" rx="2" ry="2" fill="#c6e48b"><title>2025-08-29 • 1 file(s)
+CSES: 1</title></rect>
 <text x="36" y="138" fill="#555">Intensity</text>
 <rect x="36" y="144" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>≈ 0</title></rect>
 <rect x="53" y="144" width="13" height="13" rx="2" ry="2" fill="#c6e48b"><title>≈ 3</title></rect>
-<rect x="70" y="144" width="13" height="13" rx="2" ry="2" fill="#7bc96f"><title>≈ 5</title></rect>
+<rect x="70" y="144" width="13" height="13" rx="2" ry="2" fill="#7bc96f"><title>≈ 4</title></rect>
 <rect x="87" y="144" width="13" height="13" rx="2" ry="2" fill="#239a3b"><title>≈ 7</title></rect>
 <rect x="104" y="144" width="13" height="13" rx="2" ry="2" fill="#196127"><title>≈ 10</title></rect>
 <text x="125" y="155" fill="#777">2024-08-30 → 2025-08-29</text>

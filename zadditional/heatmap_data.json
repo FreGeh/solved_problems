@@ -14,7 +14,7 @@
     "grid_start": "2024-08-26",
     "grid_weeks": 53,
     "q1": 3,
-    "q2": 5,
+    "q2": 4,
     "q3": 7,
     "max": 10,
     "palette": [
@@ -30,9 +30,9 @@
     "pad_top": 18
   },
   "totals": {
-    "all_time_total": 45,
-    "year_total": 45,
-    "month_total": 45,
+    "all_time_total": 46,
+    "year_total": 46,
+    "month_total": 46,
     "streak_all_time": 3,
     "streak_year": 3,
     "streak_month": 3
@@ -1536,8 +1536,10 @@
       }
     },
     "2025-08-29": {
-      "total": 0,
-      "by_folder": {}
+      "total": 1,
+      "by_folder": {
+        "CSES": 1
+      }
     }
   },
   "per_day_all": {
@@ -1600,6 +1602,12 @@
         "CSES": 2,
         "USACO": 3,
         "codeforces": 2
+      }
+    },
+    "2025-08-29": {
+      "total": 1,
+      "by_folder": {
+        "CSES": 1
       }
     }
   }
