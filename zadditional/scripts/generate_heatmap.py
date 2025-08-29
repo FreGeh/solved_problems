@@ -32,7 +32,7 @@ GAP = 3          # spacing
 PAD_LEFT = 36    # y-axis labels gutter
 PAD_TOP = 18     # month labels gutter
 LEGEND_H = 28    # legend block
-FONT_SIZE = 10
+FONT_SIZE = 20
 FONT_FAMILY = "system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif"
 
 GREEN_PALETTE = [
