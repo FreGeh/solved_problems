@@ -3,10 +3,9 @@
 
 ### Progress (last 12 months)
 
-<!-- Click for interactive (hover breakdowns) -->
-<div href="zadditional/docs/progress.html">
+<a href="zadditional/docs/progress.html">
   <img src="zadditional/progress_dashboard.svg" alt="Competitive programming progress heatmap and stats" width="1100">
-</div>
+</a>
 
 ## Codeforces
 
