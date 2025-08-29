@@ -1,0 +1,44 @@
+name: Progress Heatmap
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+  schedule:
+    # Daily at 03:17 UTC (~morning Europe/Berlin). Adjust if you like.
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate heatmap
+        env:
+          TARGET_DIRS: "CSES,USACO,atcoder,codechef,codeforces"
+          WINDOW_DAYS: "91"               # ~13 weeks
+          TZ_REGION: "Europe/Berlin"      # your local grouping
+          OUTPUT_SVG: "zadditional/heatmap.svg"
+          OUTPUT_JSON: "zadditional/heatmap_data.json"
+        run: |
+          python3 zadditional/scripts/generate_heatmap.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add zadditional/heatmap.svg zadditional/heatmap_data.json || true
+          git diff --cached --quiet || git commit -m "chore: update progress heatmap [skip ci]"
+          git push

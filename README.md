@@ -1,6 +1,9 @@
 # Solutions
 > Here you can find all my solutions and sometimes explanations to them
 
+### Progress Heatmap (last ~3 months)
+
+![Progress Heatmap](zadditional/heatmap.svg)
 
 ## Codeforces
 
