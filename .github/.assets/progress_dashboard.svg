@@ -407,17 +407,18 @@ codeforces: 2
 CSES: 2</title></rect>
 <rect x="868" y="82" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-08-29 • no new files</title></rect>
 <rect x="868" y="98" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-08-30 • no new files</title></rect>
+<rect x="868" y="114" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-08-31 • no new files</title></rect>
 <text x="36" y="138" font-size="10" fill="#555">Intensity</text>
 <rect x="36" y="144" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>≈ 0</title></rect>
 <rect x="53" y="144" width="13" height="13" rx="2" ry="2" fill="#c6e48b"><title>≈ 3</title></rect>
 <rect x="70" y="144" width="13" height="13" rx="2" ry="2" fill="#7bc96f"><title>≈ 5</title></rect>
 <rect x="87" y="144" width="13" height="13" rx="2" ry="2" fill="#239a3b"><title>≈ 7</title></rect>
 <rect x="104" y="144" width="13" height="13" rx="2" ry="2" fill="#196127"><title>≈ 10</title></rect>
-<text x="125" y="155" font-size="10" fill="#777">2024-08-31 → 2025-08-30</text>
+<text x="125" y="155" font-size="10" fill="#777">2024-09-01 → 2025-08-31</text>
 </svg>
 <text x="12" y="192" font-size="20" font-weight="600">45 problems</text><text x="12" y="214" fill="#555" font-size="18">solved for all time</text>
 <text x="306" y="192" font-size="20" font-weight="600">45 problems</text><text x="306" y="214" fill="#555" font-size="18">solved for the last year</text>
-<text x="600" y="192" font-size="20" font-weight="600">45 problems</text><text x="600" y="214" fill="#555" font-size="18">solved for the last month</text>
+<text x="600" y="192" font-size="20" font-weight="600">39 problems</text><text x="600" y="214" fill="#555" font-size="18">solved for the last month</text>
 <text x="12" y="252" font-size="20" font-weight="600">3 days</text><text x="12" y="274" fill="#555" font-size="18">in a row max.</text>
 <text x="306" y="252" font-size="20" font-weight="600">3 days</text><text x="306" y="274" fill="#555" font-size="18">in a row for the last year</text>
 <text x="600" y="252" font-size="20" font-weight="600">3 days</text><text x="600" y="274" fill="#555" font-size="18">in a row for the last month</text>
