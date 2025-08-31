@@ -30,9 +30,9 @@
     "pad_top": 18
   },
   "totals": {
-    "all_time_total": 47,
-    "year_total": 47,
-    "month_total": 41,
+    "all_time_total": 49,
+    "year_total": 49,
+    "month_total": 43,
     "streak_all_time": 3,
     "streak_year": 3,
     "streak_month": 3
@@ -1544,9 +1544,9 @@
       "by_folder": {}
     },
     "2025-08-31": {
-      "total": 2,
+      "total": 4,
       "by_folder": {
-        "CSES": 2
+        "CSES": 4
       }
     }
   },
@@ -1613,9 +1613,9 @@
       }
     },
     "2025-08-31": {
-      "total": 2,
+      "total": 4,
       "by_folder": {
-        "CSES": 2
+        "CSES": 4
       }
     }
   }
