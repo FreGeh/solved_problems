@@ -35,15 +35,18 @@ LEGEND_H = 28    # legend block
 FONT_LABEL = 10          # small labels on the heatmap
 FONT_STATS_BIG = 20      # big number text in stats (e.g., "15 problems")
 FONT_STATS_CAP = 18      # small caption text in stats
-FONT_FAMILY = "system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif"
+FONT_FAMILY = "system-ui,-apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif"
 
 GREEN_PALETTE = [
     "#ebedf0",  # 0
-    "#c6e48b",  # low
-    "#7bc96f",  # mid
-    "#239a3b",  # high
-    "#196127",  # very high
+    "#c6e48b",  # 1+
+    "#7bc96f",  # 3+
+    "#239a3b",  # 5+
+    "#196127",  # 7+
 ]
+
+# Fixed thresholds for color buckets (inclusive lower bounds, except 0 handled separately)
+THRESHOLDS = [1, 3, 5, 7]
 
 # -------- Time helpers --------
 tz = ZoneInfo(TZ_REGION)
@@ -119,28 +122,18 @@ while cur <= grid_end:
     days.append(cur)
     cur += timedelta(days=1)
 
-# -------- Color scale (quantiles from year data) --------
-nonzeros = sorted([year_totals[d] for d in days if year_totals[d] > 0])
-
-def quantile(xs, q):
-    if not xs:
-        return 1
-    pos = (len(xs)-1) * q
-    lo = math.floor(pos); hi = math.ceil(pos)
-    if lo == hi: return xs[lo]
-    return int(round(xs[lo] + (xs[hi]-xs[lo])*(pos-lo)))
-
-q1 = quantile(nonzeros, 0.25)
-q2 = quantile(nonzeros, 0.50)
-q3 = quantile(nonzeros, 0.75)
-maxv = nonzeros[-1] if nonzeros else 1
-
+# -------- Color scale (fixed thresholds) --------
 def color_for(v: int) -> str:
-    if v <= 0: return GREEN_PALETTE[0]
-    if v <= max(1, q1): return GREEN_PALETTE[1]
-    if v <= max(1, q2): return GREEN_PALETTE[2]
-    if v <= max(1, q3): return GREEN_PALETTE[3]
-    return GREEN_PALETTE[4]
+    if v <= 0:
+        return GREEN_PALETTE[0]
+    if v >= THRESHOLDS[3]:
+        return GREEN_PALETTE[4]
+    if v >= THRESHOLDS[2]:
+        return GREEN_PALETTE[3]
+    if v >= THRESHOLDS[1]:
+        return GREEN_PALETTE[2]
+    # v >= THRESHOLDS[0] (i.e., 1+)
+    return GREEN_PALETTE[1]
 
 # -------- Stats (Codeforces-style) --------
 def sum_between(totals: Counter[date], start: date, end: date) -> int:
@@ -249,12 +242,17 @@ def render_year_heatmap_svg(title: str) -> str:
     # Legend
     legend_x = PAD_LEFT
     legend_y = PAD_TOP + 7*(CELL+GAP) + 14
-    legend_vals = [0, max(1, q1), max(1, q2), max(1, q3), maxv]
+    legend_labels = ["0", "1+", "3+", "5+", "7+"]
     parts.append(f'<text x="{legend_x}" y="{legend_y-6}" font-size="{FONT_LABEL}" fill="#555">Intensity</text>')
     lx = legend_x
-    for i, val in enumerate(legend_vals):
-        parts.append(f'<rect x="{lx}" y="{legend_y}" width="{CELL}" height="{CELL}" rx="2" ry="2" fill="{GREEN_PALETTE[i]}"><title>≈ {val}</title></rect>')
-        lx += CELL + 4
+    for i, lab in enumerate(legend_labels):
+        parts.append(
+            f'<g>'
+            f'<rect x="{lx}" y="{legend_y}" width="{CELL}" height="{CELL}" rx="2" ry="2" fill="{GREEN_PALETTE[i]}"><title>{lab}</title></rect>'
+            f'<text x="{lx + CELL + 4}" y="{legend_y + CELL - 2}" font-size="{FONT_LABEL}" fill="#777">{lab}</text>'
+            f'</g>'
+        )
+        lx += CELL + 28
     parts.append(f'<text x="{lx+4}" y="{legend_y+CELL-2}" font-size="{FONT_LABEL}" fill="#777">{start_date_window.isoformat()} → {today_local.isoformat()}</text>')
 
     parts.append('</svg>')
@@ -271,7 +269,7 @@ def render_dashboard_svg() -> str:
     STAT_ROWS = 2
     STAT_CELL_W = heatmap_width // STAT_COLS
     STAT_LINE1 = FONT_STATS_BIG  # 20
-    STAT_LINE2 = FONT_STATS_CAP  # 10
+    STAT_LINE2 = FONT_STATS_CAP  # 18 (name kept, but used size below)
 
 
     stats_h = STAT_ROWS * 60 + 12
@@ -328,7 +326,7 @@ data = {
         "today": today_local.isoformat(),
         "grid_start": grid_start.isoformat(),
         "grid_weeks": ((grid_end - grid_start).days // 7) + 1,
-        "q1": q1, "q2": q2, "q3": q3, "max": maxv,
+        "thresholds": THRESHOLDS,
         "palette": GREEN_PALETTE,
         "cell": CELL, "gap": GAP, "pad_left": PAD_LEFT, "pad_top": PAD_TOP,
     },
@@ -394,14 +392,15 @@ html = f"""<!doctype html>
   const height = padT + 7 * (cell + gap) + 28;
 
   const palette = cfg.palette;
-  const q1 = DATA.config.q1, q2 = DATA.config.q2, q3 = DATA.config.q3, vmax = DATA.config.max;
+  const thresholds = cfg.thresholds || [1,3,5,7];
 
   function colorFor(v) {{
     if (v <= 0) return palette[0];
-    if (v <= Math.max(1, q1)) return palette[1];
-    if (v <= Math.max(1, q2)) return palette[2];
-    if (v <= Math.max(1, q3)) return palette[3];
-    return palette[4];
+    if (v >= thresholds[3]) return palette[4];
+    if (v >= thresholds[2]) return palette[3];
+    if (v >= thresholds[1]) return palette[2];
+    if (v >= thresholds[0]) return palette[1];
+    return palette[0];
   }}
 
   const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
