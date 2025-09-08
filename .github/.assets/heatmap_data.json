@@ -16,7 +16,7 @@
     "q1": 3,
     "q2": 4,
     "q3": 7,
-    "max": 11,
+    "max": 13,
     "palette": [
       "#ebedf0",
       "#c6e48b",
@@ -30,9 +30,9 @@
     "pad_top": 18
   },
   "totals": {
-    "all_time_total": 55,
-    "year_total": 55,
-    "month_total": 48,
+    "all_time_total": 59,
+    "year_total": 59,
+    "month_total": 52,
     "streak_all_time": 3,
     "streak_year": 3,
     "streak_month": 3
@@ -1450,11 +1450,11 @@
       }
     },
     "2025-08-24": {
-      "total": 11,
+      "total": 13,
       "by_folder": {
         "CSES": 2,
         "atcoder": 3,
-        "codeforces": 6
+        "codeforces": 8
       }
     },
     "2025-08-25": {
@@ -1525,8 +1525,10 @@
       }
     },
     "2025-09-08": {
-      "total": 0,
-      "by_folder": {}
+      "total": 2,
+      "by_folder": {
+        "codeforces": 2
+      }
     }
   },
   "per_day_all": {
@@ -1570,11 +1572,11 @@
       }
     },
     "2025-08-24": {
-      "total": 11,
+      "total": 13,
       "by_folder": {
         "CSES": 2,
         "atcoder": 3,
-        "codeforces": 6
+        "codeforces": 8
       }
     },
     "2025-08-25": {
@@ -1601,6 +1603,12 @@
       "total": 4,
       "by_folder": {
         "CSES": 2,
+        "codeforces": 2
+      }
+    },
+    "2025-09-08": {
+      "total": 2,
+      "by_folder": {
         "codeforces": 2
       }
     }
