@@ -32,9 +32,9 @@
     "pad_top": 18
   },
   "totals": {
-    "all_time_total": 67,
-    "year_total": 67,
-    "month_total": 42,
+    "all_time_total": 70,
+    "year_total": 70,
+    "month_total": 45,
     "streak_all_time": 3,
     "streak_year": 3,
     "streak_month": 3
@@ -1541,8 +1541,10 @@
       "by_folder": {}
     },
     "2025-09-17": {
-      "total": 0,
-      "by_folder": {}
+      "total": 3,
+      "by_folder": {
+        "codeforces": 3
+      }
     }
   },
   "per_day_all": {
@@ -1636,6 +1638,12 @@
       "total": 1,
       "by_folder": {
         "codeforces": 1
+      }
+    },
+    "2025-09-17": {
+      "total": 3,
+      "by_folder": {
+        "codeforces": 3
       }
     }
   }
