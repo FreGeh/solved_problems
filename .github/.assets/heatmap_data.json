@@ -9,8 +9,8 @@
     ],
     "timezone": "Europe/Berlin",
     "window_days": 365,
-    "start_date_window": "2024-10-12",
-    "today": "2025-10-11",
+    "start_date_window": "2024-10-13",
+    "today": "2025-10-12",
     "grid_start": "2024-10-07",
     "grid_weeks": 53,
     "thresholds": [
@@ -1555,6 +1555,10 @@
       "by_folder": {}
     },
     "2025-10-11": {
+      "total": 0,
+      "by_folder": {}
+    },
+    "2025-10-12": {
       "total": 0,
       "by_folder": {}
     }
