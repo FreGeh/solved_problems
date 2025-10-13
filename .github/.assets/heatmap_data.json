@@ -9,9 +9,9 @@
     ],
     "timezone": "Europe/Berlin",
     "window_days": 365,
-    "start_date_window": "2024-10-13",
-    "today": "2025-10-12",
-    "grid_start": "2024-10-07",
+    "start_date_window": "2024-10-14",
+    "today": "2025-10-13",
+    "grid_start": "2024-10-14",
     "grid_weeks": 53,
     "thresholds": [
       1,
@@ -34,40 +34,12 @@
   "totals": {
     "all_time_total": 70,
     "year_total": 70,
-    "month_total": 4,
+    "month_total": 3,
     "streak_all_time": 3,
     "streak_year": 3,
     "streak_month": 1
   },
   "per_day_year": {
-    "2024-10-07": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-10-08": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-10-09": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-10-10": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-10-11": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-10-12": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-10-13": {
-      "total": 0,
-      "by_folder": {}
-    },
     "2024-10-14": {
       "total": 0,
       "by_folder": {}
@@ -1559,6 +1531,10 @@
       "by_folder": {}
     },
     "2025-10-12": {
+      "total": 0,
+      "by_folder": {}
+    },
+    "2025-10-13": {
       "total": 0,
       "by_folder": {}
     }
