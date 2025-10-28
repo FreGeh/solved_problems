@@ -32,9 +32,9 @@
     "pad_top": 18
   },
   "totals": {
-    "all_time_total": 71,
-    "year_total": 71,
-    "month_total": 1,
+    "all_time_total": 75,
+    "year_total": 75,
+    "month_total": 2,
     "streak_all_time": 3,
     "streak_year": 3,
     "streak_month": 1
@@ -1256,11 +1256,11 @@
       }
     },
     "2025-08-24": {
-      "total": 17,
+      "total": 20,
       "by_folder": {
         "CSES": 2,
         "atcoder": 3,
-        "codeforces": 12
+        "codeforces": 15
       }
     },
     "2025-08-25": {
@@ -1541,8 +1541,10 @@
       "by_folder": {}
     },
     "2025-10-28": {
-      "total": 0,
-      "by_folder": {}
+      "total": 1,
+      "by_folder": {
+        "codeforces": 1
+      }
     }
   },
   "per_day_all": {
@@ -1586,11 +1588,11 @@
       }
     },
     "2025-08-24": {
-      "total": 17,
+      "total": 20,
       "by_folder": {
         "CSES": 2,
         "atcoder": 3,
-        "codeforces": 12
+        "codeforces": 15
       }
     },
     "2025-08-25": {
@@ -1648,6 +1650,12 @@
       "total": 1,
       "by_folder": {
         "CSES": 1
+      }
+    },
+    "2025-10-28": {
+      "total": 1,
+      "by_folder": {
+        "codeforces": 1
       }
     }
   }
