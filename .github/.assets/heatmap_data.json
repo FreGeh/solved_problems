@@ -9,9 +9,9 @@
     ],
     "timezone": "Europe/Berlin",
     "window_days": 365,
-    "start_date_window": "2024-10-29",
-    "today": "2025-10-28",
-    "grid_start": "2024-10-28",
+    "start_date_window": "2024-11-05",
+    "today": "2025-11-04",
+    "grid_start": "2024-11-04",
     "grid_weeks": 53,
     "thresholds": [
       1,
@@ -32,42 +32,14 @@
     "pad_top": 18
   },
   "totals": {
-    "all_time_total": 71,
-    "year_total": 71,
-    "month_total": 1,
+    "all_time_total": 76,
+    "year_total": 76,
+    "month_total": 3,
     "streak_all_time": 3,
     "streak_year": 3,
     "streak_month": 1
   },
   "per_day_year": {
-    "2024-10-28": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-10-29": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-10-30": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-10-31": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-11-01": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-11-02": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-11-03": {
-      "total": 0,
-      "by_folder": {}
-    },
     "2024-11-04": {
       "total": 0,
       "by_folder": {}
@@ -1256,11 +1228,11 @@
       }
     },
     "2025-08-24": {
-      "total": 17,
+      "total": 20,
       "by_folder": {
         "CSES": 2,
         "atcoder": 3,
-        "codeforces": 12
+        "codeforces": 15
       }
     },
     "2025-08-25": {
@@ -1541,6 +1513,36 @@
       "by_folder": {}
     },
     "2025-10-28": {
+      "total": 2,
+      "by_folder": {
+        "codeforces": 2
+      }
+    },
+    "2025-10-29": {
+      "total": 0,
+      "by_folder": {}
+    },
+    "2025-10-30": {
+      "total": 0,
+      "by_folder": {}
+    },
+    "2025-10-31": {
+      "total": 0,
+      "by_folder": {}
+    },
+    "2025-11-01": {
+      "total": 0,
+      "by_folder": {}
+    },
+    "2025-11-02": {
+      "total": 0,
+      "by_folder": {}
+    },
+    "2025-11-03": {
+      "total": 0,
+      "by_folder": {}
+    },
+    "2025-11-04": {
       "total": 0,
       "by_folder": {}
     }
@@ -1586,11 +1588,11 @@
       }
     },
     "2025-08-24": {
-      "total": 17,
+      "total": 20,
       "by_folder": {
         "CSES": 2,
         "atcoder": 3,
-        "codeforces": 12
+        "codeforces": 15
       }
     },
     "2025-08-25": {
@@ -1648,6 +1650,12 @@
       "total": 1,
       "by_folder": {
         "CSES": 1
+      }
+    },
+    "2025-10-28": {
+      "total": 2,
+      "by_folder": {
+        "codeforces": 2
       }
     }
   }
