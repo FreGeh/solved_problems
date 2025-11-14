@@ -9,7 +9,7 @@ using namespace std;
 #define debug(...) do { } while(0)
 #endif
 
-struct SegTree {
+struct SegTree_Lazy {
     int N;
     vector<int> tree;
     const int NEG = -1e9;
@@ -79,7 +79,7 @@ void solve() {
     }
     sort(small.begin(), small.end());
 
-    SegTree seg; seg.initialize(n);
+    SegTree_Lazy seg; seg.initialize(n);
     vector<string> answer(q);
     int counter=0;
     for (auto [r,l,i] : query) {
