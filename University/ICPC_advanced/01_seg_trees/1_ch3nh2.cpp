@@ -2,8 +2,10 @@
 using namespace std;
 #define ll long long
 
+vector<ll> range_coords;
+
 struct SegTree_Lazy {
-    int n;
+    ll n;
     vector<ll> seg, lazy_sum;
 
     SegTree_Lazy() : n(0) {}
@@ -17,10 +19,6 @@ struct SegTree_Lazy {
         lazy_sum.assign(4*n,0); 
     }
 
-    void build(const vector<ll>& a) { 
-        build(1,0,n-1,a); 
-    }
-
     void add(int l,int r,ll v) { 
         update(1,0,n-1,l,r,v); 
     }
@@ -30,19 +28,8 @@ struct SegTree_Lazy {
     }
 
 private:
-    void build(int v,int l,int r,const vector<ll>& a) {
-        if(l==r){ 
-            seg[v]=a[l]; 
-            return; 
-        }
-        int m=(l+r)/2;
-        build(v*2,l,m,a);
-        build(v*2+1,m+1,r,a);
-        seg[v]=seg[v*2]+seg[v*2+1];
-    }
-
     inline void apply(int v,int l,int r,ll add) {
-        seg[v]+=add*(r-l+1);
+        seg[v]+=add*(range_coords[r+1]-range_coords[l]);
         lazy_sum[v]+=add;
     }
 
@@ -76,24 +63,43 @@ private:
     }
 };
 
+struct Query {
+    char type;
+    ll l, r, k;
+};
+
 int main() {
     ios::sync_with_stdio(false); cin.tie(nullptr);
 
-    int n,q; cin>>n>>q;
-    vector<ll> a(n, 0);
-    SegTree_Lazy seg(n);
-    seg.build(a);
+    ll n,q; cin>>n>>q;
+    vector<Query> queries(q);
+    set<ll> ranges_set;
     
-    for (int i=0;i<q;i++) {
-        char p; int l,r;
-        cin>>p;
-        cin>>l>>r;
-        if (p == '!') {
-            int k;
+    for (auto &[type, l, r, k] : queries) {
+        cin>>type>>l>>r;
+        if (type == '!') {
             cin>>k;
-            seg.add(l, r, k);
         } else {
-            cout<<seg.sum(l, r)<<"\n";
+            k=0;
+        }
+        ranges_set.insert(l);
+        ranges_set.insert(r+1);
+    }
+    range_coords.assign(ranges_set.begin(), ranges_set.end());
+    ll size = range_coords.size() - 1;
+    if (size < 0) size = 0;
+    SegTree_Lazy seg(size);
+
+    for (auto &[type, l, r, k] : queries) {
+        auto it_l = lower_bound(range_coords.begin(), range_coords.end(), l);
+        auto it_r = lower_bound(range_coords.begin(), range_coords.end(), r+1);
+        auto id_l = it_l - range_coords.begin();
+        auto id_r = it_r - range_coords.begin();
+
+        if (type == '!') {
+            seg.add(id_l, id_r-1, k);
+        } else {
+            cout<<seg.sum(id_l, id_r-1)<<"\n";
         }
     }
 
