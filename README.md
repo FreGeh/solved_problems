@@ -2,6 +2,8 @@
 
 <img src=".github/.assets/progress_dashboard.svg" alt="Competitive programming progress heatmap and stats">
 
+### [Problem Log](./problem_log.md)
+
 # Solutions
 > Here you can find all my solutions and sometimes explanations to them
 
