@@ -2,28 +2,22 @@
 using namespace std;
 #define ll long long
 
-ll find(ll l, ll r, ll k, ll n) {
-    ll ans=0;
-    while (l<=r) {
-        ll m=l+(r-l)/2;
-        if (m-(m/n)>=k) {
-            ans=m;
-            r=m-1;
-        } else {
-            l=m+1;
-        }
-    }
-    return ans;
-}
-
 void solve() {
     ll n,k; cin>>n>>k;
     ll sol;
     if (n>k) {
         sol=k;
     } else {
-        ll l=1,r=k*2;
-        sol = find(l, r, k, n);
+        ll l=1,r=k*2,ans=0;
+        while (l<=r) {
+            ll m=l+(r-l)/2;
+            if (m-(m/n)>=k) {
+                ans=m;
+                r=m-1;
+            } else {
+                l=m+1;
+            }
+        }
     }
     cout<<sol<<"\n";
 }

@@ -1,0 +1,7 @@
+# Competitive Programming Problem Log
+
+| ID | Platform | Title | Difficulty | Status | Tags | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1996A | Codeforces | [Legs](./codeforces/1996A.cpp) | 800 | Solved | Binary_Search | very simple, you don't really need binary search tbh |
+| 1915C | Codeforces | [Can I Square?](./codeforces/1915C.cpp) | 800 | Solved | Binary_Search | keep values you compare as small as possible |
+| 1352C | Codeforces | [K-th Not Divisible by n](./codeforces/1352C.cpp) | 1200 | Solved | Binary_Search | keep it simple and choose a proper search space |
