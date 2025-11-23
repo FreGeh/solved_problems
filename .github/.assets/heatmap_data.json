@@ -1172,18 +1172,16 @@
       }
     },
     "2025-08-24": {
-      "total": 25,
+      "total": 26,
       "by_folder": {
         "CSES": 2,
         "atcoder": 3,
-        "codeforces": 20
+        "codeforces": 21
       }
     },
     "2025-08-25": {
-      "total": 1,
-      "by_folder": {
-        "codeforces": 1
-      }
+      "total": 0,
+      "by_folder": {}
     },
     "2025-08-26": {
       "total": 0,
@@ -1616,17 +1614,11 @@
       }
     },
     "2025-08-24": {
-      "total": 25,
+      "total": 26,
       "by_folder": {
         "CSES": 2,
         "atcoder": 3,
-        "codeforces": 20
-      }
-    },
-    "2025-08-25": {
-      "total": 1,
-      "by_folder": {
-        "codeforces": 1
+        "codeforces": 21
       }
     },
     "2025-08-28": {
