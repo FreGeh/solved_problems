@@ -32,9 +32,9 @@
     "pad_top": 18
   },
   "totals": {
-    "all_time_total": 94,
-    "year_total": 94,
-    "month_total": 14,
+    "all_time_total": 95,
+    "year_total": 95,
+    "month_total": 15,
     "streak_all_time": 3,
     "streak_year": 3,
     "streak_month": 2
@@ -1138,15 +1138,15 @@
       "by_folder": {}
     },
     "2025-08-23": {
-      "total": 5,
+      "total": 4,
       "by_folder": {
-        "CSES": 5
+        "CSES": 4
       }
     },
     "2025-08-24": {
-      "total": 26,
+      "total": 27,
       "by_folder": {
-        "CSES": 2,
+        "CSES": 3,
         "atcoder": 3,
         "codeforces": 21
       }
@@ -1556,8 +1556,9 @@
       "by_folder": {}
     },
     "2025-11-26": {
-      "total": 1,
+      "total": 2,
       "by_folder": {
+        "CSES": 1,
         "codeforces": 1
       }
     }
@@ -1597,15 +1598,15 @@
       }
     },
     "2025-08-23": {
-      "total": 5,
+      "total": 4,
       "by_folder": {
-        "CSES": 5
+        "CSES": 4
       }
     },
     "2025-08-24": {
-      "total": 26,
+      "total": 27,
       "by_folder": {
-        "CSES": 2,
+        "CSES": 3,
         "atcoder": 3,
         "codeforces": 21
       }
@@ -1699,8 +1700,9 @@
       }
     },
     "2025-11-26": {
-      "total": 1,
+      "total": 2,
       "by_folder": {
+        "CSES": 1,
         "codeforces": 1
       }
     }
