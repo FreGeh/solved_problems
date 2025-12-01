@@ -9,9 +9,9 @@
     ],
     "timezone": "Europe/Berlin",
     "window_days": 365,
-    "start_date_window": "2024-12-01",
-    "today": "2025-11-30",
-    "grid_start": "2024-11-25",
+    "start_date_window": "2024-12-02",
+    "today": "2025-12-01",
+    "grid_start": "2024-12-02",
     "grid_weeks": 53,
     "thresholds": [
       1,
@@ -40,34 +40,6 @@
     "streak_month": 2
   },
   "per_day_year": {
-    "2024-11-25": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-11-26": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-11-27": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-11-28": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-11-29": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-11-30": {
-      "total": 0,
-      "by_folder": {}
-    },
-    "2024-12-01": {
-      "total": 0,
-      "by_folder": {}
-    },
     "2024-12-02": {
       "total": 0,
       "by_folder": {}
@@ -1577,6 +1549,10 @@
       "by_folder": {}
     },
     "2025-11-30": {
+      "total": 0,
+      "by_folder": {}
+    },
+    "2025-12-01": {
       "total": 0,
       "by_folder": {}
     }
