@@ -427,17 +427,18 @@ atcoder: 4</title></rect>
 <rect x="868" y="66" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-12-25 • no new files</title></rect>
 <rect x="868" y="82" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-12-26 • no new files</title></rect>
 <rect x="868" y="98" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-12-27 • no new files</title></rect>
+<rect x="868" y="114" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-12-28 • no new files</title></rect>
 <text x="36" y="138" font-size="10" fill="#555">Intensity</text>
 <g><rect x="36" y="144" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>0</title></rect><text x="53" y="155" font-size="10" fill="#777">0</text></g>
 <g><rect x="77" y="144" width="13" height="13" rx="2" ry="2" fill="#c6e48b"><title>1+</title></rect><text x="94" y="155" font-size="10" fill="#777">1+</text></g>
 <g><rect x="118" y="144" width="13" height="13" rx="2" ry="2" fill="#7bc96f"><title>3+</title></rect><text x="135" y="155" font-size="10" fill="#777">3+</text></g>
 <g><rect x="159" y="144" width="13" height="13" rx="2" ry="2" fill="#239a3b"><title>5+</title></rect><text x="176" y="155" font-size="10" fill="#777">5+</text></g>
 <g><rect x="200" y="144" width="13" height="13" rx="2" ry="2" fill="#196127"><title>7+</title></rect><text x="217" y="155" font-size="10" fill="#777">7+</text></g>
-<text x="245" y="155" font-size="10" fill="#777">2024-12-28 → 2025-12-27</text>
+<text x="245" y="155" font-size="10" fill="#777">2024-12-29 → 2025-12-28</text>
 </svg>
 <text x="12" y="192" font-size="20" font-weight="600">103 problems</text><text x="12" y="214" fill="#555" font-size="18">solved for all time</text>
 <text x="306" y="192" font-size="20" font-weight="600">103 problems</text><text x="306" y="214" fill="#555" font-size="18">solved for the last year</text>
-<text x="600" y="192" font-size="20" font-weight="600">7 problems</text><text x="600" y="214" fill="#555" font-size="18">solved for the last month</text>
+<text x="600" y="192" font-size="20" font-weight="600">6 problems</text><text x="600" y="214" fill="#555" font-size="18">solved for the last month</text>
 <text x="12" y="252" font-size="20" font-weight="600">3 days</text><text x="12" y="274" fill="#555" font-size="18">in a row max.</text>
 <text x="306" y="252" font-size="20" font-weight="600">3 days</text><text x="306" y="274" fill="#555" font-size="18">in a row for the last year</text>
 <text x="600" y="252" font-size="20" font-weight="600">1 days</text><text x="600" y="274" fill="#555" font-size="18">in a row for the last month</text>
