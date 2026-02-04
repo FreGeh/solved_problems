@@ -424,13 +424,14 @@ atcoder: 5</title></rect>
 <rect x="852" y="114" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2026-02-01 • no new files</title></rect>
 <rect x="868" y="18" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2026-02-02 • no new files</title></rect>
 <rect x="868" y="34" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2026-02-03 • no new files</title></rect>
+<rect x="868" y="50" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2026-02-04 • no new files</title></rect>
 <text x="36" y="138" font-size="10" fill="#555">Intensity</text>
 <g><rect x="36" y="144" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>0</title></rect><text x="53" y="155" font-size="10" fill="#777">0</text></g>
 <g><rect x="77" y="144" width="13" height="13" rx="2" ry="2" fill="#c6e48b"><title>1+</title></rect><text x="94" y="155" font-size="10" fill="#777">1+</text></g>
 <g><rect x="118" y="144" width="13" height="13" rx="2" ry="2" fill="#7bc96f"><title>3+</title></rect><text x="135" y="155" font-size="10" fill="#777">3+</text></g>
 <g><rect x="159" y="144" width="13" height="13" rx="2" ry="2" fill="#239a3b"><title>5+</title></rect><text x="176" y="155" font-size="10" fill="#777">5+</text></g>
 <g><rect x="200" y="144" width="13" height="13" rx="2" ry="2" fill="#196127"><title>7+</title></rect><text x="217" y="155" font-size="10" fill="#777">7+</text></g>
-<text x="245" y="155" font-size="10" fill="#777">2025-02-04 → 2026-02-03</text>
+<text x="245" y="155" font-size="10" fill="#777">2025-02-05 → 2026-02-04</text>
 </svg>
 <text x="12" y="192" font-size="20" font-weight="600">108 problems</text><text x="12" y="214" fill="#555" font-size="18">solved for all time</text>
 <text x="306" y="192" font-size="20" font-weight="600">108 problems</text><text x="306" y="214" fill="#555" font-size="18">solved for the last year</text>
