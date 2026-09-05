@@ -103,12 +103,11 @@ codeforces: 3</title></rect>
 <rect x="196" y="82" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-11-14 • no new files</title></rect>
 <rect x="196" y="98" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-11-15 • no new files</title></rect>
 <rect x="196" y="114" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-11-16 • no new files</title></rect>
-<rect x="212" y="18" width="13" height="13" rx="2" ry="2" fill="#7bc96f"><title>2025-11-17 • 4 file(s)
-codeforces: 4</title></rect>
+<rect x="212" y="18" width="13" height="13" rx="2" ry="2" fill="#c6e48b"><title>2025-11-17 • 2 file(s)
+codeforces: 2</title></rect>
 <rect x="212" y="34" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-11-18 • no new files</title></rect>
 <rect x="212" y="50" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-11-19 • no new files</title></rect>
-<rect x="212" y="66" width="13" height="13" rx="2" ry="2" fill="#c6e48b"><title>2025-11-20 • 1 file(s)
-codeforces: 1</title></rect>
+<rect x="212" y="66" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-11-20 • no new files</title></rect>
 <rect x="212" y="82" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-11-21 • no new files</title></rect>
 <rect x="212" y="98" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-11-22 • no new files</title></rect>
 <rect x="212" y="114" width="13" height="13" rx="2" ry="2" fill="#c6e48b"><title>2025-11-23 • 2 file(s)
@@ -132,8 +131,8 @@ CSES: 1</title></rect>
 codeforces: 1</title></rect>
 <rect x="244" y="66" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-12-04 • no new files</title></rect>
 <rect x="244" y="82" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-12-05 • no new files</title></rect>
-<rect x="244" y="98" width="13" height="13" rx="2" ry="2" fill="#239a3b"><title>2025-12-06 • 5 file(s)
-atcoder: 5</title></rect>
+<rect x="244" y="98" width="13" height="13" rx="2" ry="2" fill="#196127"><title>2025-12-06 • 7 file(s)
+atcoder: 7</title></rect>
 <rect x="244" y="114" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-12-07 • no new files</title></rect>
 <rect x="260" y="18" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-12-08 • no new files</title></rect>
 <rect x="260" y="34" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2025-12-09 • no new files</title></rect>
@@ -233,8 +232,8 @@ atcoder: 2</title></rect>
 <rect x="468" y="50" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2026-03-11 • no new files</title></rect>
 <rect x="468" y="66" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2026-03-12 • no new files</title></rect>
 <rect x="468" y="82" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2026-03-13 • no new files</title></rect>
-<rect x="468" y="98" width="13" height="13" rx="2" ry="2" fill="#7bc96f"><title>2026-03-14 • 3 file(s)
-codeforces: 3</title></rect>
+<rect x="468" y="98" width="13" height="13" rx="2" ry="2" fill="#7bc96f"><title>2026-03-14 • 4 file(s)
+codeforces: 4</title></rect>
 <rect x="468" y="114" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2026-03-15 • no new files</title></rect>
 <rect x="484" y="18" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2026-03-16 • no new files</title></rect>
 <rect x="484" y="34" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2026-03-17 • no new files</title></rect>
@@ -409,7 +408,10 @@ codeforces: 3</title></rect>
 <rect x="868" y="50" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2026-09-02 • no new files</title></rect>
 <rect x="868" y="66" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2026-09-03 • no new files</title></rect>
 <rect x="868" y="82" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2026-09-04 • no new files</title></rect>
-<rect x="868" y="98" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>2026-09-05 • no new files</title></rect>
+<rect x="868" y="98" width="13" height="13" rx="2" ry="2" fill="#196127"><title>2026-09-05 • 16 file(s)
+codeforces: 13
+atcoder: 2
+CSES: 1</title></rect>
 <text x="36" y="138" font-size="10" fill="#555">Intensity</text>
 <g><rect x="36" y="144" width="13" height="13" rx="2" ry="2" fill="#ebedf0"><title>0</title></rect><text x="53" y="155" font-size="10" fill="#777">0</text></g>
 <g><rect x="77" y="144" width="13" height="13" rx="2" ry="2" fill="#c6e48b"><title>1+</title></rect><text x="94" y="155" font-size="10" fill="#777">1+</text></g>
